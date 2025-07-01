@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>부탁드려요제발여기서내보내주세요너무무서워요</title>
+    <title>Salvum me fac</title>
     <style>
         /* DungGeunMo 폰트 직접 로드 시도 (woff2 포맷 우선) */
         @font-face {
@@ -44,7 +44,11 @@
 
         strong {
             color: #FFFFFF; /* 강조 텍스트도 흰색 */
-            font-weight: normal;
+            font-weight: normal; /* 도트 폰트 특성상 굵기 조절이 어렵거나 의미 없을 수 있음 */
+        }
+        em { /* 혹시 모를 이탤릭 태그가 사용될 경우를 대비해 기본 스타일 */
+            font-style: normal;
+            color: #FFFFFF;
         }
 
         /* 글자를 완전히 투명하게 만들고, 공간은 차지하도록 함 */
@@ -104,8 +108,7 @@
         <p>오늘은 음악 이야기하고 싶었거든요.</p>
         <p>하지만 들어주실 분 없이 혼자 떠들면 부끄럽잖아요.</p>
         <p>어, 잠시만요.</p>
-        <p><strong>반봎: 나는 또.. 그림 말고 노래를 듣는게 취미야</strong></p>
-        <p><strong>혹시 너가 좋아하는 노래는 뭐야?</strong></p>
+        <p><strong>반봎: 나는 또.. 그림 말고 노래를 듣는게 취미야. 혹시 너가 좋아하는 노래는 뭐야?</strong></p>
         <p>우와. 기뻐.</p>
         <p>다들 음악을 좋아하시는군요.</p>
         <p>취미를 공유할 수 있다는 것은 엄청 기쁜 일이에요.</p>
