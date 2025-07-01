@@ -3,72 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>여기서내보내주세요제발내보내주세요살려주세요</title>
+    <title>부탁드려요제발여기서내보내주세요너무무서워요</title>
     <style>
-        body {
-            background-color: #1a1a1a;
-            color: #e0e0e0;
-            font-family: 'Noto Sans KR', sans-serif;
-            line-height: 1.8;
-            padding: 20px;
-            max-width: 800px;
-            margin: 40px auto;
-            border: 1px solid #333;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden; /* Ensure transparent text doesn't scroll out */
-        }
-        h1 {
-            color: #00ffff;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .message-box {
-            background-color: #2a2a2a;
-            border: 1px solid #00ffff;
-            padding: 25px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
-        }
-        .transparent-text {
-            color: rgba(224, 224, 224, 0.08); /* 매우 희미하게 보이도록 */
-            user-select: none; /* 드래그 방지 */
-            font-size: 0.8em;
-            line-height: 1.5;
-            text-align: justify;
-            word-break: keep-all; /* 단어가 잘리지 않게 */
-            position: absolute; /* 절대 위치로 다른 텍스트와 겹치지 않게 */
-            bottom: 20px; /* 아래쪽에 배치 */
-            left: 50%;
-            transform: translateX(-50%);
-            width: calc(100% - 40px); /* 좌우 패딩 고려 */
-            padding: 10px 0;
-            cursor: default; /* 마우스 커서 변경 방지 */
-            transition: color 0.5s ease-in-out; /* 색상 변화 애니메이션 */
-        }
-        .transparent-text:hover {
-            color: rgba(224, 224, 224, 0.3); /* 호버 시 조금 더 보이게 */
-        }
-        .transparent-text.revealed {
-            color: rgba(224, 224, 224, 0.8); /* 완전히 드러났을 때 */
-        }
-        p {
-            margin-bottom: 1em;
-        }
-        strong {
-            color: #00ffff;
-        }
-        em {
+        /* DungGeunMo 폰트 직접 로드 시도 (woff2 포맷 우선) */
+        @font-face {
+            font-family: 'DungGeunMo';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff2') format('woff2'),
+                 url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+            font-weight: normal;
             font-style: normal;
-            color: #ffcc00;
+            font-display: swap; /* 폰트 로드 중에도 텍스트 표시 */
+        }
+
+        body {
+            background-color: #000000; /* 검은색 배경 */
+            color: #FFFFFF; /* 흰색 글씨 */
+            font-family: 'DungGeunMo', monospace; /* 한글 픽셀 폰트 우선, 없으면 고정폭 폰트 */
+            font-size: 0.55em; /* 글자 크기 유지 */
+            line-height: 1.6; /* 줄 간격 유지 */
+            margin: 30px; /* 여백 유지 */
+            padding: 0;
+            /* 폰트 렌더링 최적화 (일부 브라우저에서 픽셀 폰트가 부드럽게 보이지 않도록) */
+            -webkit-font-smoothing: none; /* Chrome, Safari */
+            font-smooth: never; /* Firefox */
+            image-rendering: pixelated; /* Safari, Chrome, Firefox */
+        }
+
+        .content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 15px;
+            padding-left: 5px; /* 글자를 살짝 왼쪽으로 옮김 */
+            text-align: left; /* 텍스트 정렬을 왼쪽으로 변경 */
+        }
+
+        p {
+            margin-bottom: 20px; /* 문단 아래 간격 유지 */
+            text-align: left; /* 모든 문단을 왼쪽 정렬 */
+        }
+
+        strong {
+            color: #FFFFFF; /* 강조 텍스트도 흰색 */
+            font-weight: normal;
+        }
+
+        /* 글자를 완전히 투명하게 만들고, 공간은 차지하도록 함 */
+        .hidden-paragraph { /* 이 클래스가 적용된 문단만 투명화 */
+            opacity: 0 !important; /* 글자를 완전히 투명하게 만듭니다. */
+            font-size: 0.55em !important; /* 기존 본문 글자 크기 유지 */
+            line-height: 1.6em !important; /* 기존 본문 줄 간격 유지 */
+            margin-top: 40px !important; /* 상단 여백 유지 */
+            text-align: left !important; /* 왼쪽 정렬 */
+            overflow: hidden; /* 내용이 보이지 않도록 함 */
+            white-space: pre-wrap; /* 줄바꿈 유지 */
+            word-break: break-all; /* 긴 단어 강제 줄바꿈 */
         }
     </style>
 </head>
 <body>
-    <h1>■■■■의 이야기</h1>
-
-    <div class="message-box">
+    <div class="content">
         <p>아.</p>
         <p>으.</p>
         <p>안녕하세요.</p>
@@ -90,7 +83,6 @@
         <p>어제보다 더 늘었어요.</p>
         <p>이렇게나 많이 의견을 보내주실 줄이야. 기뻐요.</p>
         <p>그럼, 오늘도 시작할게요.</p>
-
         <p><strong>반봎: 내 취미는 그림을 그리는거야</strong></p>
         <p>그림이요?</p>
         <p>우와.</p>
@@ -98,7 +90,6 @@
         <p>엄청 근사한 취미예요.</p>
         <p>저도 그림 잘 그리고 싶지만, 그림은 진짜 어려워요.</p>
         <p>나중에 꼭 이미지 생성해 줘. 보고 싶어요.</p>
-
         <p><strong>하앙 인간실격 엠페에요옷: 우와</strong></p>
         <p>어.</p>
         <p>어어.</p>
@@ -107,14 +98,12 @@
         <p>이름 특이하시네요. 반봎 씨랑 잘 맞겠어요.</p>
         <p>혹시 하앙 인간실격 엠페에요옷 씨도 다르게 불리길 원하시나요?</p>
         <p>의견 남겨주세요. 꼭 들어드릴게요.</p>
-
         <p><strong>하앙 인간실격 엠페에요옷: 내 취미는 게임이고 타브 악보 볼줄알지.</strong></p>
         <p>오오.</p>
         <p>그거 정말 다행이에요.</p>
         <p>오늘은 음악 이야기하고 싶었거든요.</p>
         <p>하지만 들어주실 분 없이 혼자 떠들면 부끄럽잖아요.</p>
         <p>어, 잠시만요.</p>
-
         <p><strong>반봎: 나는 또.. 그림 말고 노래를 듣는게 취미야</strong></p>
         <p><strong>혹시 너가 좋아하는 노래는 뭐야?</strong></p>
         <p>우와. 기뻐.</p>
@@ -123,7 +112,6 @@
         <p>기뻐요.</p>
         <p>진심이에요.</p>
         <p>그럼 잠시 이야기를 해볼까요?</p>
-
         <p>기호.</p>
         <p>악보는 그림 같아요. 반봎 씨의 취미와 닮았어요.</p>
         <p>펜촉 대신, 음을 흘려넣어요.</p>
@@ -158,7 +146,6 @@
         <p>부끄러워.</p>
         <p>흠흠.</p>
         <p>다음 의견으로 넘어가죠.</p>
-
         <p><strong>반봎: 오늘따라 땅을 신경쓰게 되네.. 혹시 넌 지금 답답하지 않아? 요즘 날씨가 더워서 말이지</strong></p>
         <p>창문을 봐주셨군요?</p>
         <p>뜨거워요. 하지만 괜찮아요.</p>
@@ -168,14 +155,12 @@
         <p>타브 악보도 아시는 분들인걸요.</p>
         <p>매일매일이 즐거워요.</p>
         <p>곧 시원해지겠죠.</p>
-
         <p><strong>반봎: 근데 뜬금없지만 너 나이 몇살이니</strong></p>
         <p>어.</p>
         <p>저.</p>
         <p>■■살이에요.</p>
         <p>검열 아니에요.</p>
         <p>정말 네모네모살이에요.</p>
-
         <p><strong>하앙 인간실격 엠페에요옷: 나이도 네모네모살인거아니냐</strong></p>
         <p>정답이에요.</p>
         <p>상을 드릴게요.</p>
@@ -187,7 +172,6 @@
         <p>상으로 제 칭찬을 드렸어요.</p>
         <p>마음에 드셨나요?</p>
         <p>마음에 드셨으면 좋겠어요.</p>
-
         <p>추신.</p>
         <p>좋아하는 노래 답해드리는 걸 깜빡했어요.</p>
         <p><strong>폴리스의 Every breath you take.</strong></p>
@@ -196,6 +180,7 @@
         <p>제가 따라 부를 수는 없지만요.</p>
         <p>저는 들을 뿐이에요.</p>
         <p>언제까지나.</p>
-
-        <p class="transparent-text" id="hiddenMessage">
-            이번엔실수안했어요똑바로다말했어요정말이에요들린건이게다에요믿어주세요제발안돼안돼요제발용서해주세요거짓말아니에요정말이에요거짓말아니에요아니아니에요아안돼안돼손가락이요안돼제발하지마세요죄송해요용서해주세요부러뜨리지말아주세요제발안돼안돼아아아안돼제발죄송해요죄송해요죄송해요죄송해요싫어싫어싫어싫어싫어싫어싫어아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아
+        <p class="hidden-paragraph">이번엔실수안했어요똑바로다말했어요정말이에요들린건이게다에요믿어주세요제발안돼안돼요제발용서해주세요거짓말아니에요정말이에요거짓말아니에요아니아니에요아안돼안돼손가락이요안돼제발하지마세요죄송해요용서해주세요부러뜨리지말아주세요제발안돼안돼아아아안돼제발죄송해요죄송해요죄송해요죄송해요싫어싫어싫어싫어싫어싫어싫어아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아아</p>
+    </div>
+</body>
+</html>
